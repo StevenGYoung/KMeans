@@ -16,7 +16,17 @@ k = 2
 # STEP 2: Randomly initialize the centroids
 centroids = X[np.random.choice(X.shape[0], k, replace=False)]
 
+# Plot the data points again and then in the following line of code we'll add the centriod - not necessary, but nice to see that they are in fact random -
+plt.scatter(X[:, 0], X[:, 1], c='k', label='Data')
 
+# Plot the randomly initialized centroids -  will show each data point and the centroids as red "x"s
+plt.scatter(centroids[:, 0], centroids[:, 1], c='r', marker='x', s=100, label='Initial Centroids')
+
+# Show the legend
+plt.legend()
+
+# Show the plot
+plt.show()
 # Initialize labels array - this stage aids in tracking which cluster a data point belongs to
 labels = np.zeros(X.shape[0])
 
